@@ -1,5 +1,3 @@
-import Assignments from ".";
-
 export default function AssignmentEditor() {
   return (
     <div id="wd-assignments-editor">
