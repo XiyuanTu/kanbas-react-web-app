@@ -2,39 +2,67 @@ import { Link } from "react-router-dom";
 export default function CoursesNavigation() {
   return (
     <div id="wd-courses-navigation">
-      <Link target="_blank" rel="noreferrer" to="/Kanbas/Courses/1234/Home">
+      <Link
+        target="_blank"
+        rel="noopener noreferrer"
+        to="/Kanbas/Courses/1234/Home"
+      >
         Home
       </Link>
       <br />
-      <Link target="_blank" rel="noreferrer" to="/Kanbas/Courses/1234/Modules">
+      <Link
+        target="_blank"
+        rel="noopener noreferrer"
+        to="/Kanbas/Courses/1234/Modules"
+      >
         Modules
       </Link>
       <br />
-      <Link target="_blank" rel="noreferrer" to="/Kanbas/Courses/1234/Piazza">
+      <Link
+        target="_blank"
+        rel="noopener noreferrer"
+        to="/Kanbas/Courses/1234/Piazza"
+      >
         Piazza
       </Link>
       <br />
-      <Link target="_blank" rel="noreferrer" to="/Kanbas/Courses/1234/Zoom">
+      <Link
+        target="_blank"
+        rel="noopener noreferrer"
+        to="/Kanbas/Courses/1234/Zoom"
+      >
         Zoom
       </Link>
       <br />
       <Link
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         to="/Kanbas/Courses/1234/Assignments"
       >
         Assignments
       </Link>
       <br />
-      <Link target="_blank" rel="noreferrer" to="/Kanbas/Courses/1234/Quizzes">
+      <Link
+        target="_blank"
+        rel="noopener noreferrer"
+        to="/Kanbas/Courses/1234/Quizzes"
+      >
         Quizzes
       </Link>
       <br />
-      <Link target="_blank" rel="noreferrer" to="/Kanbas/Courses/1234/Grades">
+      <Link
+        target="_blank"
+        rel="noopener noreferrer"
+        to="/Kanbas/Courses/1234/Grades"
+      >
         Grades
       </Link>
       <br />
-      <Link target="_blank" rel="noreferrer" to="/Kanbas/Courses/1234/People">
+      <Link
+        target="_blank"
+        rel="noopener noreferrer"
+        to="/Kanbas/Courses/1234/People"
+      >
         People
       </Link>
       <br />
