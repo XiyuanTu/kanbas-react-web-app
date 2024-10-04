@@ -1,0 +1,91 @@
+@media (min-width: 768px) {
+    #wd-kanbas .wd-main-content-offset {
+      padding-left: 140px !important;
+    }
+  }
+
+  .wd-dashboard-course .card {
+    width: 300px; /* Ensure consistent width */
+    min-height: 400px; /* Set a minimum height to make cards uniform */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .wd-dashboard-course .card img {
+    height: 160px;
+    object-fit: cover; /* Ensures images fill the space uniformly */
+  }
+  
+  .wd-dashboard-course .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Distributes the content evenly inside */
+  }
+
+  .list-group.wd > .list-group-item.active {
+    color: black;
+    background-color: white;
+    border-left: 3px solid black !important;
+  }
+  
+body { margin: 0;  padding: 0; }
+body * { font-family:
+         Arial, Helvetica, 
+         sans-serif; }
+@media (min-width: 768px) {
+  #wd-kanbas .wd-main-content-offset {
+    padding-left: 140px !important;
+  }
+}
+
+.btn-secondary {
+  --bs-btn-color: #000 !important;
+  --bs-btn-bg: #c7cdd1 !important;
+  --bs-btn-border-color: #c7cdd1 !important;
+  --bs-btn-hover-color: #fff !important;
+}
+.bg-secondary {
+  --bs-secondary-rgb: 199, 205, 209;
+}
+.list-group-item {
+  --bs-list-group-border-color: gray;
+}
+.wd-lesson {
+  border-left: 3px solid green !important;
+}
+
+.wd-course-list {
+  padding: 20px;
+}
+
+.wd-course-list h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.wd-course-list h2 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.wd-course-item {
+  margin-bottom: 20px;
+}
+
+.wd-course-item h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.wd-course-item p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.text-danger {
+  color: #D41B2C;
+}
+
