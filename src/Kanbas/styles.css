@@ -1,0 +1,132 @@
+/* Navigation List Styles */
+.wd.list-group {
+  background-color: white;
+  padding: 0;
+  border: none;
+}
+
+.wd.list-group .list-group-item {
+  background-color: white;
+  color: #D41B2C;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+}
+
+#wd-courses-navigation.wd.list-group .list-group-item.active {
+  background-color: white !important;
+  color: black !important;
+  border-left: 10px solid black !important;
+  border-top: 1px solid rgba(0,0,0,.125) !important;
+  border-bottom: 1px solid rgba(0,0,0,.125) !important;
+  border-right: 1px solid rgba(0,0,0,.125) !important;
+}
+
+.wd.list-group .list-group-item:hover {
+  color: #D41B2C;
+}
+
+.wd.list-group .list-group-item:not(.active):hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .wd.list-group {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* Main Content Styles */
+@media (min-width: 768px) {
+  #wd-kanbas .wd-main-content-offset {
+    padding-left: 140px !important;
+  }
+}
+
+/* Dashboard Course Card Styles */
+.wd-dashboard-course .card {
+  width: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wd-dashboard-course .card img {
+  height: 160px;
+  object-fit: cover;
+}
+
+.wd-dashboard-course .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Global Body Styles */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Button and Background Color Styles */
+.btn-secondary {
+  --bs-btn-color: #000 !important;
+  --bs-btn-bg: #c7cdd1 !important;
+  --bs-btn-border-color: #c7cdd1 !important;
+  --bs-btn-hover-color: #fff !important;
+}
+
+.bg-secondary {
+  --bs-secondary-rgb: 199, 205, 209;
+}
+
+.list-group-item {
+  --bs-list-group-border-color: ;
+}
+
+/* Lesson Styles */
+.wd-lesson {
+  border-left: 3px solid green !important;
+}
+
+/* Course List Styles */
+.wd-course-list {
+  padding: 20px;
+}
+
+.wd-course-list h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.wd-course-list h2 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.wd-course-item {
+  margin-bottom: 20px;
+}
+
+.wd-course-item h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.wd-course-item p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Text Danger Styles */
+.text-danger {
+  color: #D41B2C;
+}

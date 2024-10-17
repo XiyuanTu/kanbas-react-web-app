@@ -1,39 +1,77 @@
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link, useLocation } from "react-router-dom"; // Import useLocation
+
 export default function TOC() {
+  const { pathname } = useLocation(); // Get the current pathname
+
   return (
-    <ul>
-      <li>
-        <Link id="wd-a" to="/Labs">
+    <ul className="nav nav-pills">
+      {/* Labs Link */}
+      <li className="nav-item">
+        <Link to="/Labs" className="nav-link">
           Labs
         </Link>
       </li>
-      <li>
-        <Link id="wd-a1" to="/Labs/Lab1">
+
+      {/* Lab 1 Link */}
+      <li className="nav-item">
+        <Link
+          to="/Labs/Lab1"
+          className={`nav-link ${pathname.includes("Lab1") ? "active" : ""}`}
+        >
           Lab 1
         </Link>
       </li>
-      <li>
-        <Link id="wd-a2" to="/Labs/Lab2">
+
+      {/* Lab 2 Link */}
+      <li className="nav-item">
+        <Link
+          to="/Labs/Lab2"
+          className={`nav-link ${pathname.includes("Lab2") ? "active" : ""}`}
+        >
           Lab 2
         </Link>
       </li>
-      <li>
-        <Link id="wd-a3" to="/Labs/Lab3">
+
+      {/* Lab 3 Link */}
+      <li className="nav-item">
+        <Link
+          to="/Labs/Lab3"
+          className={`nav-link ${pathname.includes("Lab3") ? "active" : ""}`}
+        >
           Lab 3
         </Link>
       </li>
-      <li>
-        <Link id="wd-k" to="/Kanbas">
+
+      {/* Kanbas Link */}
+      <li className="nav-item">
+        <Link to="/Kanbas" className="nav-link">
           Kanbas
         </Link>
       </li>
-      <li>
-        <Link
-          id="wd-github"
-          to="https://github.com/XiyuanTu/kanbas-react-web-app"
+
+      {/* LinkedIn Link */}
+      <li className="nav-item">
+        <a
+          href="https://www.linkedin.com/in/xiyuan/"
+          className="nav-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </li>
+
+      {/* GitHub Link */}
+      <li className="nav-item">
+        <a
+          href="https://github.com/XiyuanTu/kanbas-react-web-app"
+          className="nav-link"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           GitHub
-        </Link>
+        </a>
       </li>
     </ul>
   );
