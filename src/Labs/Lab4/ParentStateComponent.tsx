@@ -8,7 +8,6 @@ export default function ParentStateComponent() {
       <ChildStateComponent
         counter={counter}
         setCounter={setCounter} />
-      <hr />
+      <hr/>
     </div>
-  );
-}
+);}

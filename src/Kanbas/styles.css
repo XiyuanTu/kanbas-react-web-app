@@ -1,3 +1,71 @@
+/* Navigation List Styles */
+.wd.list-group {
+  background-color: white;
+  padding: 0;
+  border: none;
+}
+
+.wd.list-group .list-group-item {
+  background-color: white;
+  color: #D41B2C;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+}
+
+#wd-courses-navigation.wd.list-group .list-group-item.active {
+  background-color: white !important;
+  color: black !important;
+  border-left: 10px solid black !important;
+  border-top: 1px solid rgba(0,0,0,.125) !important;
+  border-bottom: 1px solid rgba(0,0,0,.125) !important;
+  border-right: 1px solid rgba(0,0,0,.125) !important;
+}
+
+.wd.list-group .list-group-item:hover {
+  color: #D41B2C;
+}
+
+.wd.list-group .list-group-item:not(.active):hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .wd.list-group {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* Main Content Styles */
+@media (min-width: 768px) {
+  #wd-kanbas .wd-main-content-offset {
+    padding-left: 140px !important;
+  }
+}
+
+/* Dashboard Course Card Styles */
+.wd-dashboard-course .card {
+  width: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wd-dashboard-course .card img {
+  height: 160px;
+  object-fit: cover;
+}
+
+.wd-dashboard-course .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Global Body Styles */
 body {
   margin: 0;
   padding: 0;
@@ -7,29 +75,7 @@ body * {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* The class is declared inside a @media query that applies the 140 pixel offset only when the screen is wider than 768 pixels, exactly when the sidebar appears. */
-@media (min-width: 768px) {
-  #wd-kanbas .wd-main-content-offset {
-    padding-left: 140px !important;
-  }
-}
-
-/* sidebar renders with a white background color, red text, and black border of the highlighted link. */
-.list-group.wd>.list-group-item.active {
-  color: black;
-  background-color: white;
-  border-left: 3px solid black !important;
-}
-
-
-
-.btn-secondary {
-  --bs-btn-color: #000 !important;
-  --bs-btn-bg: #c7cdd1 !important;
-  --bs-btn-border-color: #c7cdd1 !important;
-  --bs-btn-hover-color: #fff !important;
-}
-
+/* Button and Background Color Styles */
 .btn-secondary {
   --bs-btn-color: #000 !important;
   --bs-btn-bg: #c7cdd1 !important;
@@ -42,30 +88,46 @@ body * {
 }
 
 .list-group-item {
-  --bs-list-group-border-color: gray;
+  --bs-list-group-border-color: ;
 }
 
+/* Lesson Styles */
 .wd-lesson {
   border-left: 3px solid green !important;
 }
 
-.wd-each-assign {
-  border-left: 3px solid green !important;
+/* Course List Styles */
+.wd-course-list {
+  padding: 20px;
 }
 
-
-.white-bg {
-  background-color: white !important;
-  border-right: none !important;
+.wd-course-list h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.wd-border-medium {
-  border-style: solid;
-  padding: 2px 10px;
+.wd-course-list h2 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.custom-link {
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
+/* Course Item Styling */
+.wd-course-item {
+  margin-bottom: 20px;
+}
+
+.wd-course-item h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.wd-course-item p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Text Danger Styles */
+.text-danger {
+  color: #D41B2C;
 }

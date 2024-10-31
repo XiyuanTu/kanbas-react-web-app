@@ -1,41 +1,48 @@
+import React from 'react';
 export default function Lab1() {
   return (
     <div id="wd-lab1">
-      <h2>Lab 1</h2>
+      <h2>Lab 1 - DEV ENV + HTML</h2>
       <h3>HTML Examples</h3>
+
+      {/* Heading Tags Section */}
       <div id="wd-h-tag">
         <h4>Heading Tags</h4>
-        Text documents are often broken up into several sections and subsections. Each section is usually prefaced with a short title or heading that attempts to summarize the topic of the section it precedes. For instance this paragraph is preceded by the heading Heading Tags. The font of the section headings are usually larger and bolder than the plain text and their subsection headings. This document uses headings to introduce topics such as HTML Documents, HTML Tags, Heading Tags, etc. HTML heading tags can be used to format plain text so that it renders in a browser as large headings. There are 6 heading tags for different sizes: h1, h2, h3, h4, h5, and h6. Tag h1 is the largest heading and h6 is the smallest heading.
+        <p>
+          Text documents are often broken up into several sections and subsections. Each section is usually prefaced with a short title or heading that attempts to summarize the topic of the section it precedes.
+        </p>
+        <p>
+          For instance, this paragraph is preceded by the heading "Heading Tags".
+        </p>
+        <p>
+          The font of section headings is usually larger and bolder than their subsection headings. This document uses headings to introduce topics such as HTML Documents, HTML Tags, and Heading Tags.
+        </p>
+        <p>
+          HTML heading tags can be used to format plain text so that it renders in a browser as large headings. There are six heading tags for different sizes: <strong>h1</strong>, <strong>h2</strong>, <strong>h3</strong>, <strong>h4</strong>, <strong>h5</strong>, and <strong>h6</strong>. Tag <strong>h1</strong> is the largest heading, and <strong>h6</strong> is the smallest heading.
+        </p>
       </div>
+
+      {/* Paragraph Tags Section */}
       <div id="wd-p-tag">
         <h4>Paragraph Tag</h4>
         <p id="wd-p-1">
-          This is a paragraph. We often separate a long set of sentences with
-          vertical spaces to make the text easier to read. Browsers ignore vertical
-          white spaces and render all the text as one single set of sentences. To
-          force the browser to add vertical spacing, wrap the paragraphs you want to
-          separate with the paragraph tag
+          This is a paragraph. Text is often separated by vertical spaces to make it easier to read. Browsers, by default, ignore vertical white spaces and render all the text as one single block. To force the browser to recognize and create vertical spacing, the <strong>&lt;p&gt;</strong> tag is used to wrap individual paragraphs.
         </p>
         <p id="wd-p-2">
-          This is the first paragraph. The paragraph tag is used to format
-          vertical gaps between long pieces of text like this one.
+          This is the second paragraph. Even though there may be visual white space between this paragraph and the one above it in the code, browsers treat them as contiguous blocks unless the paragraphs are wrapped with <strong>&lt;p&gt;</strong> tags.
         </p>
         <p id="wd-p-3">
-          This is the second paragraph. Even though there is a deliberate white
-          gap between the paragraph above and this paragraph, by default
-          browsers render them as one contiguous piece of text as shown here on
-          the right.
-        </p>
-        <p id="wd-p-4">
-          This is the third paragraph. Wrap each paragraph with the paragraph
-          tag to tell browsers to render the gaps.
+          This is the third paragraph. Using the <strong>&lt;p&gt;</strong> tag ensures that the browser adds proper vertical spacing between blocks of text.
         </p>
       </div>
+
+
+      {/* Ordered List Elements Section */}
       <div id="wd-lists">
         <h4>List Tags</h4>
         <h5>Ordered List Tag</h5>
-        How to make pancakes:
-        <ol id="wd-pancakes">
+        <p>How to make pancakes:</p>
+        <ol>
           <li>Mix dry ingredients.</li>
           <li>Add wet ingredients.</li>
           <li>Stir to combine.</li>
@@ -45,31 +52,17 @@ export default function Lab1() {
           <li>Flip and cook the other side.</li>
           <li>Serve and enjoy!</li>
         </ol>
-        My favorite recipe:
-        <ol id="wd-my-favorite-recipe">
-          <li>Open a frozen pancake.</li>
-          <li>Put the pancake on a baking sheet.</li>
-          <li>Put them into the oven.</li>
-          <li>Start baking.</li>
-          <li>Take out and enjoy!</li>
-        </ol>
         <h5>Unordered List Tag</h5>
-        My favorite books (in no particular order)
-        <ul id="wd-my-books">
-          <li>Dune</li>
-          <li>Lord of the Rings</li>
-          <li>Ender's Game</li>
-          <li>Red Mars</li>
-          <li>The Forever War</li>
-        </ul>
-        Your favorite books (in no particular order)
-        <ul id="wd-your-books">
-          <li>Journey to the West</li>
-          <li>Dream of the Red Chamber</li>
-          <li>A Song of Ice and Fire</li>
-          <li>House of the Dragon</li>
+        <p>My Favorite Songs && Artists(in no particular order) -- Linked to Youtube!</p>
+        <ul>
+        <li><a href="https://www.youtube.com/results?search_query=To.X+Taeyong" target="_blank" rel="noopener noreferrer">To.X -- Taeyong</a></li>
+          <li><a href="https://www.youtube.com/results?search_query=A+Change+Of+Heart+The+1975" target="_blank" rel="noopener noreferrer">A Change Of Heart -- The 1975</a></li>
+          <li><a href="https://www.youtube.com/results?search_query=Yellow+Coldplay" target="_blank" rel="noopener noreferrer">Yellow -- Coldplay</a></li>
+          <li><a href="https://www.youtube.com/results?search_query=The+Scientist+Coldplay" target="_blank" rel="noopener noreferrer">The Scientist -- Coldplay</a></li>
+          <li><a href="https://www.youtube.com/results?search_query=Golden+Hour+JVKE" target="_blank" rel="noopener noreferrer">Golden Hour -- JVKE</a></li>
         </ul>
       </div>
+      
       <div id="wd-tables">
         <h4>Table Tag</h4>
         <table border={1} width="100%">
@@ -100,48 +93,6 @@ export default function Lab1() {
               <td>2/17/21</td>
               <td>95</td>
             </tr>
-            <tr>
-              <td>Q4</td>
-              <td>Java</td>
-              <td>2/24/21</td>
-              <td>88</td>
-            </tr>
-            <tr>
-              <td>Q5</td>
-              <td>C++</td>
-              <td>3/3/21</td>
-              <td>92</td>
-            </tr>
-            <tr>
-              <td>Q6</td>
-              <td>Python</td>
-              <td>3/10/21</td>
-              <td>87</td>
-            </tr>
-            <tr>
-              <td>Q7</td>
-              <td>React</td>
-              <td>3/17/21</td>
-              <td>91</td>
-            </tr>
-            <tr>
-              <td>Q8</td>
-              <td>TypeScript</td>
-              <td>3/24/21</td>
-              <td>89</td>
-            </tr>
-            <tr>
-              <td>Q9</td>
-              <td>GraphQL</td>
-              <td>3/31/21</td>
-              <td>93</td>
-            </tr>
-            <tr>
-              <td>Q10</td>
-              <td>Algorithm</td>
-              <td>4/7/21</td>
-              <td>94</td>
-            </tr>
           </tbody>
           <tfoot>
             <tr>
@@ -151,116 +102,128 @@ export default function Lab1() {
           </tfoot>
         </table>
       </div>
+
       <div id="wd-images">
-        <h4>Image tag</h4>
-        Loading an image from the internet:
-        <br />
-        <img id="wd-starship"
-          width="400px"
-          src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
-          alt="SpaceX Starship"
-        />
-        <br />
-        Loading a local image:
-        <br />
-        <img id="wd-teslabot" src="images/teslabot.jpg" height="200px" alt="Tesla Bot" />
-      </div>
-      <div id="wd-forms">
-        <h4>Form Elements</h4>
-        <form id="wd-text-fields">
-          <h5>Text Fields</h5>
-          <label htmlFor="wd-text-fields-username">Username:</label>
-          <input id="wd-text-fields-username" placeholder="jdoe" /> <br />
-          <label htmlFor="wd-text-fields-password">Password:</label>
-          <input type="password" id="wd-text-fields-password" value="123@#$asd" />
-          <br />
-          <label htmlFor="wd-text-fields-first-name">First name:</label>
-          <input type="text" id="wd-text-fields-first-name" title="John" /> <br />
-          <label htmlFor="wd-text-fields-last-name">Last name:</label>
-          <input type="text" id="wd-text-fields-last-name" placeholder="Doe"
-            value="Wonderland" title="The last name" />
-          <h5>Text boxes</h5>
-          <label>Biography:</label><br />
-          <textarea id="wd-textarea" cols={30} rows={10}>Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.</textarea>
-          <h5 id="wd-buttons">Buttons</h5>
-          <button id="wd-all-good" onClick={() => alert("Life is Good!")} type="button">
-            Hello World!
-          </button>
-          <h5>File upload</h5>
-          <input id="wd-upload" type="file" />
-          <h5 id="wd-radio-buttons">Radio buttons</h5>
-          <label>Favorite movie genre:</label><br />
-          <input type="radio" name="radio-genre" id="wd-radio-comedy" />
-          <label htmlFor="wd-radio-comedy">Comedy</label><br />
-          <input type="radio" name="radio-genre" id="wd-radio-drama" />
-          <label htmlFor="wd-radio-drama">Drama</label><br />
-          <input type="radio" name="radio-genre" id="wd-radio-scifi" />
-          <label htmlFor="wd-radio-scifi">Science Fiction</label><br />
-          <input type="radio" name="radio-genre" id="wd-radio-fantasy" />
-          <label htmlFor="wd-radio-fantasy">Fantasy</label>
-          <h5 id="wd-checkboxes">Checkboxes</h5>
-          <label>Favorite movie genre:</label><br />
-          <input type="checkbox" name="check-genre" id="wd-chkbox-comedy" />
-          <label htmlFor="wd-chkbox-comedy">Comedy</label><br />
-          <input type="checkbox" name="check-genre" id="wd-chkbox-drama" />
-          <label htmlFor="wd-chkbox-drama">Drama</label><br />
-          <input type="checkbox" name="check-genre" id="wd-chkbox-scifi" />
-          <label htmlFor="wd-chkbox-scifi">Science Fiction</label><br />
-          <input type="checkbox" name="check-genre" id="wd-chkbox-fantasy" />
-          <label htmlFor="wd-chkbox-fantasy">Fantasy</label>
-          <h4 id="wd-dropdowns">Dropdowns</h4>
-          <h5>Select one</h5>
-          <label htmlFor="wd-select-one-genre"> Favorite movie genre: </label><br />
-          <select id="wd-select-one-genre">
-            <option value="COMEDY">Comedy</option>
-            <option value="DRAMA">Drama</option>
-            <option selected value="SCIFI">
-              Science Fiction</option>
-            <option value="FANTASY">Fantasy</option>
-          </select>
-          <h5>Select many</h5>
-          <label htmlFor="wd-select-many-genre"> Favorite movie genres: </label><br />
-          <select id="wd-select-many-genre" multiple>
-            <option selected value="COMEDY">Comedy</option>
-            <option value="DRAMA">Drama</option>
-            <option selected value="SCIFI">
-              Science Fiction</option>
-            <option value="FANTASY">Fantasy</option>
-          </select>
-          <h4>Other HTML field types</h4>
-          <label htmlFor="wd-text-fields-email"> Email: </label>
-          <input type="email"
-            placeholder="jdoe@somewhere.com"
-            id="wd-text-fields-email" /><br />
-          <label htmlFor="wd-text-fields-salary-start"> Starting salary:
-          </label>
-          <input type="number"
-            id="wd-text-fields-salary-start"
-            placeholder="1000"
-            value="100000" /><br />
-          <label htmlFor="wd-text-fields-rating"> Rating: </label>
-          <input type="range" id="wd-text-fields-rating"
-            placeholder="Doe"
-            max="5"
-            value="4" /><br />
-          <label htmlFor="wd-text-fields-dob"> Date of birth: </label>
-          <input type="date"
-            id="wd-text-fields-dob"
-            value="2000-01-21" /><br />
+      <h4>Image tag</h4>
+      Loading an image from the internet:
+      <br />
+      <img id="wd-starship"
+        width="400px"
+      src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
+      alt=""/>
+      <br />
+      Loading a local image:
+      <br />
+      <img id="wd-1975albumn" src="images/The-1975.jpg" width="400px" alt="The 1975 Album Cover" />
+    </div>
+
+    
+    <div id="wd-forms">
+    <h4>Form Elements</h4>
+    <form id="wd-text-fields">
+    <h5>Text Fields</h5>
+    <label htmlFor="wd-text-fields-username">Username:</label>
+    <input id="wd-text-fields-username" placeholder="jdoe" /> <br />
+    <label htmlFor="wd-text-fields-password">Password:</label>
+    <input type="password" id="wd-text-fields-password" value="123@#$asd" />
+    <br />
+    <label htmlFor="wd-text-fields-first-name">First name:</label>
+    <input type="text" id="wd-text-fields-first-name" title="John" /> <br />
+    <label htmlFor="wd-text-fields-last-name">Last name:</label>
+    <input type="text" id="wd-text-fields-last-name" placeholder="Doe"
+      value="Wonderland" title="The last name" />
+    {/* copy rest of form elements here  */}
+    <h5>Text boxes</h5>
+      <label>Biography:</label><br/>
+      <textarea id="wd-textarea" cols={30} rows={10}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
         </form>
       </div>
-      <div id="wd-anchortags">
-        <h4>Anchor tag</h4>
-        Please <a id="wd-lipsum" href="https://www.lipsum.com">click here</a> to get dummy text<br />
-        Please <a id="wd-github" href="https://github.com/Xueni-T/kanbas-react-web-app">clike here</a> to get the code repository on GitHub.
-      </div>
+
+    <h5 id="wd-buttons">Buttons</h5>
+    <button id="wd-all-good" onClick={() => alert("Life is Good!")} type="button">
+      Hello World!
+    </button>
+
+    <h5>File upload</h5>
+    <input id="wd-upload" type="file"/>
+
+    <h5 id="wd-radio-buttons">Radio buttons</h5>
+    <label>Favorite music genre:</label><br />
+
+    <input type="radio" name="radio-genre" id="wd-radio-classical"/>
+    <label htmlFor="wd-radio-classical">Classical Music</label><br />
+
+    <input type="radio" name="radio-genre" id="wd-radio-kpop"/>
+    <label htmlFor="wd-radio-kpop">Kpop Music</label><br />
+
+    <input type="radio" name="radio-genre" id="wd-radio-band"/>
+    <label htmlFor="wd-radio-band">Band in Pop</label><br />
+
+    <input type="radio" name="radio-genre" id="wd-radio-rock"/>
+    <label htmlFor="wd-radio-rock">Rock</label>
+
+    <h5 id="wd-checkboxes">Checkboxes</h5>
+    <label>Favorite movie genre:</label><br/>
+
+    <input type="checkbox" name="check-genre" id="wd-chkbox-comedy"/>
+    <label htmlFor="wd-chkbox-comedy">Comedy</label><br/>
+
+    <input type="checkbox" name="check-genre" id="wd-chkbox-drama"/>
+    <label htmlFor="wd-chkbox-drama">Drama</label><br/>
+
+    <input type="checkbox" name="check-genre" id="wd-chkbox-scifi"/>
+    <label htmlFor="wd-chkbox-scifi">Science Fiction</label><br/>
+
+    <input type="checkbox" name="check-genre" id="wd-chkbox-fantasy"/>
+    <label htmlFor="wd-chkbox-fantasy">Fantasy</label>
+    
+    <h4 id="wd-dropdowns">Dropdowns</h4>
+    <h5>Select one</h5>
+    <label htmlFor="wd-select-one-genre"> Favorite music genre: </label><br/>
+    <select id="wd-select-one-genre">
+      <option value="CLASSI">Classical Music</option>
+      <option value="KPOP">Kpop</option>
+      <option selected value="ROCK">
+          Rock</option>
+      <option value="BAND">Band in Pop</option>
+    </select>
+
+    <h5>Select many</h5>
+    <label htmlFor="wd-select-many-genre"> Favorite movie genres: </label><br/>
+    <select id="wd-select-many-genre" multiple>
+      <option selected value="COMEDY">Comedy</option>
+      <option value="DRAMA">Drama</option>
+      <option selected value="SCIFI">
+          Science Fiction</option>
+      <option value="FANTASY">Fantasy</option>
+    </select>
+    
+    <h4>Other HTML field types</h4>
+
+  <label htmlFor="wd-text-fields-email"> Email: </label>
+  <input type="email"
+        placeholder="jdoe@somewhere.com"
+        id="wd-text-fields-email"/><br/>
+
+  <label htmlFor="wd-text-fields-salary-start"> Starting salary:
+  </label>
+  <input type="number"
+        id="wd-text-fields-salary-start"
+        placeholder="1000"
+        defaultValue="100000"/><br/>
+
+  <label htmlFor="wd-text-fields-rating"> Rating: </label>
+  <input type="range" id="wd-text-fields-rating"
+        placeholder="Doe"
+        max="5"
+        defaultValue="4"/><br/>
+
+  <label htmlFor="wd-text-fields-dob"> Date of birth: </label>
+  <input type="date"
+        id="wd-text-fields-dob"
+        defaultValue="2000-01-21"/><br/>
+        
     </div>
+
   );
 }
