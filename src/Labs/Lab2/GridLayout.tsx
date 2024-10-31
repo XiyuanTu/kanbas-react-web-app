@@ -1,6 +1,4 @@
-import React from 'react';
-import './index.css';
-
+import "./index.css";
 export default function GridLayout() {
   return (
     <div id="wd-css-grid-layout">
@@ -15,7 +13,6 @@ export default function GridLayout() {
           </div>
         </div>
       </div>
-
       <div id="wd-css-left-third-right-two-thirds" className="wd-grid-row">
         <div className="wd-grid-col-third-page wd-bg-color-green wd-fg-color-white">
           <h3>Left third</h3>
@@ -24,7 +21,6 @@ export default function GridLayout() {
           <h3>Right two thirds</h3>
         </div>
       </div>
-
       <div id="wd-css-side-bars" className="wd-grid-row">
         <div className="wd-grid-col-left-sidebar wd-bg-color-yellow">
           <h3>Side bar</h3>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaCalendar, FaEnvelopeOpenText, FaRegClock }
   from "react-icons/fa";
 import { AiOutlineDashboard } from "react-icons/ai";

@@ -7,9 +7,7 @@ export default function PathParameters() {
       <Link to="/Labs/Lab3/add/1/2">1 + 2</Link> <br />
       <Link to="/Labs/Lab3/add/3/4">3 + 4</Link>
       <Routes>
-        <Route path="add/:a/:b"
-               element={<AddPathParameters />} />
+        <Route path="add/:a/:b" element={<AddPathParameters />} />
       </Routes>
-    </div>
-  );
+    </div>);
 }

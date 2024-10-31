@@ -1,78 +1,46 @@
-import React from 'react';
-import { Link, useLocation } from "react-router-dom"; // Import useLocation
+import { useLocation } from "react-router";
 
 export default function TOC() {
-  const { pathname } = useLocation(); // Get the current pathname
-
+  const { pathname } = useLocation();
   return (
     <ul className="nav nav-pills">
-      {/* Labs Link */}
       <li className="nav-item">
-        <Link to="/Labs" className="nav-link">
+        <a id="wd-a" href="#/Labs" className="nav-link">
           Labs
-        </Link>
+        </a>
       </li>
-
-      {/* Lab 1 Link */}
       <li className="nav-item">
-        <Link
-          to="/Labs/Lab1"
-          className={`nav-link ${pathname.includes("Lab1") ? "active" : ""}`}
-        >
+        <a id="wd-a1" href="#/Labs/Lab1"
+          className={`nav-link ${pathname.includes("Lab1") ? "active" : ""}`}>
           Lab 1
-        </Link>
-      </li>
-
-      {/* Lab 2 Link */}
+        </a> </li>
       <li className="nav-item">
-        <Link
-          to="/Labs/Lab2"
-          className={`nav-link ${pathname.includes("Lab2") ? "active" : ""}`}
-        >
+        <a id="wd-a2" href="#/Labs/Lab2"
+          className={`nav-link ${pathname.includes("Lab2") ? "active" : ""}`}>
           Lab 2
-        </Link>
-      </li>
-
-      {/* Lab 3 Link */}
+        </a> </li>
       <li className="nav-item">
-        <Link
-          to="/Labs/Lab3"
-          className={`nav-link ${pathname.includes("Lab3") ? "active" : ""}`}
-        >
+        <a id="wd-a3" href="#/Labs/Lab3"
+          className={`nav-link ${pathname.includes("Lab3") ? "active" : ""}`}>
           Lab 3
-        </Link>
-      </li>
-
-      {/* Kanbas Link */}
+        </a> </li>
       <li className="nav-item">
-        <Link to="/Kanbas" className="nav-link">
+        <a id="wd-a4" href="#/Labs/Lab4"
+          className={`nav-link ${pathname.includes("Lab4") ? "active" : ""}`}>
+          Lab 4
+        </a> </li>
+      <li className="nav-item">
+        <a id="wd-k" href="#/Kanbas" className="nav-link">
           Kanbas
-        </Link>
-      </li>
-
-      {/* LinkedIn Link */}
+        </a> </li>
       <li className="nav-item">
-        <a
-          href="https://www.linkedin.com/in/xiyuan/"
-          className="nav-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-      </li>
-
-      {/* GitHub Link */}
+        <a id="wd-k" href="https://github.com/Xueni-T" className="nav-link">
+          My GitHub
+        </a> </li>
       <li className="nav-item">
-        <a
-          href="https://github.com/XiyuanTu/kanbas-react-web-app"
-          className="nav-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-      </li>
+        <a id="wd-github" href="https://github.com/Xueni-T/kanbas-react-web-app/tree/a4" className="nav-link">
+          My A4 Repository
+        </a> </li>
     </ul>
   );
 }
