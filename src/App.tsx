@@ -9,7 +9,7 @@ export default function App() {
     <div>
       {/* Main heading and subheading */}
       {/* <h1>Welcome to CS5610 Fall - Kanbas Web App Dev</h1>
-      <h2>Chieh-Yu (Joyce) Chen</h2> */}
+      <h2>Xiyuan Tu</h2> */}
 
       {/* Router Setup */}
       <HashRouter>
