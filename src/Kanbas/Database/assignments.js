@@ -1,4 +1,4 @@
-[
+const data = [
     {
       "_id": "A101",
       "title": "Propulsion Assignment",
@@ -107,5 +107,5 @@
       "group": "Exams",
       "submissionType": "online"
     }
-  ]
-  
+  ];
+  export default data;
