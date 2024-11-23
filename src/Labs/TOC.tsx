@@ -73,7 +73,7 @@ export default function TOC() {
       {/* LinkedIn Link */}
       <li className="nav-item">
         <a
-          href="https://www.linkedin.com/in/joyce-chen-1686b3199/"
+          href="https://www.linkedin.com/in/xiyuan"
           className="nav-link"
           target="_blank"
           rel="noopener noreferrer"
@@ -85,7 +85,7 @@ export default function TOC() {
       {/* GitHub Link */}
       <li className="nav-item">
         <a
-          href="https://github.com/cchiehyu/kanbas-react-web-app-cs5610-fa24"
+          href="https://github.com/XiyuanTu/kanbas-react-web-app"
           className="nav-link"
           target="_blank"
           rel="noopener noreferrer"
@@ -96,7 +96,7 @@ export default function TOC() {
 
       <li className="nav-item">
         <a
-          href="https://github.com/cchiehyu/kanbas-node-server-app-cs5610-fa24"
+          href="https://github.com/XiyuanTu/kanbas-server"
           className="nav-link"
           target="_blank"
           rel="noopener noreferrer"
@@ -107,7 +107,7 @@ export default function TOC() {
 
       <li className="nav-item">
         <a
-          href="https://kanbas-node-server-app-a5-25ca51243a6d.herokuapp.com/"
+          href="https://kanbas-server-7685d332b718.herokuapp.com/"
           className="nav-link"
           target="_blank"
           rel="noopener noreferrer"
