@@ -107,7 +107,7 @@ export default function TOC() {
 
       <li className="nav-item">
         <a
-          href="https://kanbas-node-server-app-a5-25ca51243a6d.herokuapp.com/"
+          href="https://kanbas-server-7685d332b718.herokuapp.com/"
           className="nav-link"
           target="_blank"
           rel="noopener noreferrer"
