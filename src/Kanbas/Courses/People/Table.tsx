@@ -1,7 +1,9 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { FaUserCircle, FaSort } from "react-icons/fa";
+import PeopleDetails from "./Details";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import * as db from "../../Database";
+import { findUsersForCourse } from "../client";
 
 interface User {
   _id: string;
@@ -22,44 +24,51 @@ interface Enrollment {
 
 type SortKey = keyof User;
 
-export default function PeopleTable() {
-  const { cid } = useParams<{ cid: string }>();
-  const { users, enrollments } = db;
+
+export default function PeopleTable({ users = [] }: { users?: any[] }) {
   const [sortKey, setSortKey] = useState<SortKey>("lastName");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+  const [courseUsers, setCourseUsers] = useState<User[]>([]); 
+  const { cid: courseId } = useParams<{ cid: string }>();
 
-  const sortedUsers = useMemo(() => {
-    const filteredUsers = (users as User[]).filter((user) =>
-      (enrollments as Enrollment[]).some(
-        (enrollment) => enrollment.user === user._id && enrollment.course === cid
-      )
-    );
-
-    return filteredUsers.sort((a, b) => {
-      if (a[sortKey] < b[sortKey]) return sortOrder === "asc" ? -1 : 1;
-      if (a[sortKey] > b[sortKey]) return sortOrder === "asc" ? 1 : -1;
-      return 0;
-    });
-  }, [users, enrollments, cid, sortKey, sortOrder]);
+  useEffect(() => {
+    const fetchCourseUsers = async () => {
+      try {
+        if (courseId) {
+          const fetchedUsers = await findUsersForCourse(courseId);
+          setCourseUsers(fetchedUsers);
+        }
+      } catch (error) {
+        console.error("Error fetching course users:", error);
+      }
+    };
+    fetchCourseUsers();
+  }, [courseId]);
 
   const handleSort = (key: SortKey) => {
     setSortOrder(sortOrder === "asc" && sortKey === key ? "desc" : "asc");
     setSortKey(key);
   };
 
-  if (!users || !enrollments) {
+  const displayUsers = courseId ? courseUsers : users;
+
+  if (!displayUsers) {
     return <div>Loading...</div>;
   }
 
   return (
     <div id="wd-people-table">
-      <h3>People in Course: {cid}</h3>
-      {sortedUsers.length === 0 ? (
-        <p>No users enrolled in this course.</p>
+      <PeopleDetails />
+      <h3>People: </h3>
+      {displayUsers .length === 0 ? (
+        <p>No users found.</p>
       ) : (
         <table className="table table-striped">
           <thead>
             <tr>
+            <th onClick={() => handleSort("lastName")}>
+                _id <FaSort />
+              </th>
               <th onClick={() => handleSort("lastName")}>
                 Name <FaSort />
               </th>
@@ -81,18 +90,25 @@ export default function PeopleTable() {
             </tr>
           </thead>
           <tbody>
-            {sortedUsers.map((user) => (
+            {displayUsers .map((user) => (
               <tr key={user._id}>
+                    <td className="text-nowrap">
+                    <small className="text-muted">ID: {user._id}</small>
+                  </td>
                 <td className="wd-full-name text-nowrap">
-                  <FaUserCircle className="me-2 fs-1 text-secondary" />
-                  <span className="wd-first-name">{user.firstName}</span>{" "}
-                  <span className="wd-last-name">{user.lastName}</span>
+                  <Link to={`/Kanbas/Account/Users/${user._id}`} className="text-decoration-none">
+
+                    <FaUserCircle className="me-2 fs-1 text-secondary" />
+                    <span className="wd-first-name">{user.firstName}</span>{" "}
+                    <span className="wd-last-name">{user.lastName}</span>
+                  </Link>
                 </td>
                 <td className="wd-login-id">{user.loginId}</td>
                 <td className="wd-section">{user.section}</td>
                 <td className="wd-role">{user.role}</td>
                 <td className="wd-last-activity">{user.lastActivity}</td>
                 <td className="wd-total-activity">{user.totalActivity}</td>
+                
               </tr>
             ))}
           </tbody>

@@ -73,7 +73,7 @@ export default function TOC() {
       {/* LinkedIn Link */}
       <li className="nav-item">
         <a
-          href="https://www.linkedin.com/in/xiyuan"
+          href="https://www.linkedin.com/in/xiyuan/"
           className="nav-link"
           target="_blank"
           rel="noopener noreferrer"
@@ -107,7 +107,7 @@ export default function TOC() {
 
       <li className="nav-item">
         <a
-          href="https://kanbas-server-7685d332b718.herokuapp.com/"
+          href="https://kanbas-node-server-app-a5-25ca51243a6d.herokuapp.com/"
           className="nav-link"
           target="_blank"
           rel="noopener noreferrer"
