@@ -6,6 +6,7 @@ import { FaSearch, FaTrash } from 'react-icons/fa';
 import { FaPen } from 'react-icons/fa';
 import { deleteAssignment, setAssignments } from './reducer';
 import * as assignmentsClient from "./client";
+import { RootState } from '../../store';
 
 interface Assignment {
   _id: string;
@@ -38,6 +39,13 @@ export default function Assignments() {
       assignment => assignment.course === cid
     )
   );
+
+  const { currentUser } = useSelector((state: RootState) => 
+    state.accountReducer
+  );
+  
+  console.log("Current User Role:", currentUser?.role);
+
 
   useEffect(() => {
     const fetchAssignments = async () => {
@@ -96,7 +104,7 @@ export default function Assignments() {
   };
 
   return (
-    <div id="wd-assignments" className="container mt-4">
+    <div className="container-fluid" style={{ width: '100%', margin: '0 auto' }}>
       <div className="d-flex justify-content-between align-items-center mb-3">
         <div className="input-group" style={{ width: '250px' }}>
           <span className="input-group-text bg-white">
@@ -111,12 +119,16 @@ export default function Assignments() {
         <div>
           <button className="btn btn-secondary me-2">SHOW BY DATE</button>
           <button className="btn btn-secondary">SHOW BY TYPE</button>
+
+          {currentUser.role !== 'STUDENT' && (
+          <>
           <button 
             className="btn btn-danger ms-3"
             onClick={handleAddAssignment}
           >
             <BsPlus className="me-1" /> Assignment
           </button>
+          </>)}
         </div>
       </div>
 
@@ -166,11 +178,15 @@ export default function Assignments() {
                       >
                         <FaPen className="text-primary" />
                       </Link>
+
+                      {currentUser.role !== 'STUDENT' && (
+                      <>
                       <FaTrash
                         className="text-danger"
                         onClick={() => handleDeleteClick(assignment._id, assignment.title)}
                         style={{ cursor: 'pointer' }}
                       />
+                      </>)}
                     </div>
                   </div>
                 </div>

@@ -53,8 +53,7 @@ export const updateCourse = async (course: any) => {
   return data;
 };
 
-export const createCourse = async (course: any) => {
-  const { data } = await axiosWithCredentials.post(`${COURSES_API}`, course);
-  return data;
+export function createCourse(course: any) {
+  throw new Error('Function not implemented.');
 }
 
