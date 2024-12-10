@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:4000";
+const API_BASE = process.env.REACT_APP_REMOTE_SERVER || "http://localhost:4000";
 
 export const createModuleAPI = async (courseId: string, moduleName: string) => {
   const response = await axios.post(`${API_BASE}/api/courses/${courseId}/modules`, {
