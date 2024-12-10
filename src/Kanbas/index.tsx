@@ -122,12 +122,20 @@ export default function Kanbas() {
 
   const deleteCourse = async (courseId: string) => {
     try {
+      if (!courseId) {
+        console.error("No course ID provided for deletion");
+        alert("Failed to delete course - Invalid course ID");
+        return;
+      }
+  
       await courseClient.deleteCourse(courseId);
-      setUserCourses(userCourses.filter((course) => course._id !== courseId));
+      
+      // Fetch fresh data after successful deletion
+      await findCoursesForUser();
       await fetchAllCourses();
     } catch (error) {
+      console.error("Error deleting course:", error);
       alert("Failed to delete course");
-      console.error(error);
     }
   };
 
@@ -137,34 +145,30 @@ export default function Kanbas() {
         alert("Course name cannot be empty");
         return;
       }
-      
+  
       if (!courseForm.description.trim()) {
         alert("Course description cannot be empty");
         return;
       }
-
+  
       const isDuplicate = allCourses.some(
-        existingCourse => 
-          existingCourse.number.toLowerCase() === courseForm.number.toLowerCase() && 
+        existingCourse =>
+          existingCourse.number.toLowerCase() === courseForm.number.toLowerCase() &&
           existingCourse._id !== courseForm._id
       );
-
+  
       if (isDuplicate) {
         alert(`Course with number ${courseForm.number} already exists`);
         return;
       }
-
-      await courseClient.updateCourse(courseForm);
-      setUserCourses(
-        userCourses.map((c) => {
-          if (c._id === courseForm._id) {
-            return courseForm;
-          }
-          return c;
-        })
-      );
-      await fetchAllCourses();
-
+  
+      const updatedCourse = await courseClient.updateCourse(courseForm);
+      
+      // Refetch all courses to sync frontend state with backend
+      await findCoursesForUser();  // Refresh user's courses
+      await fetchAllCourses();     // Refresh all courses
+  
+      // Reset form
       setCourseForm({
         _id: "",
         name: "",
@@ -195,12 +199,9 @@ export default function Kanbas() {
   useEffect(() => {
     const initializeCourses = async () => {
       if (currentUser?._id) {
-        if (currentUser.role === 'STUDENT') {
           await findCoursesForUser();
-          await fetchAllCourses(); // Still fetch all courses for reference
-        } else {
+          await fetchAllCourses(); 
           await fetchAllCourses();
-        }
       }
     };
   

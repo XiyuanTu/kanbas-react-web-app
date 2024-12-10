@@ -58,6 +58,14 @@ const showNotification = (message: string, type: 'success' | 'danger' | 'info') 
 
 const handleEnrollment = async (courseId: string, enrolled: boolean) => {
   await updateEnrollment(courseId, enrolled);
+  
+  // Toggle enrolling state to force re-render of the correct view
+  if (enrolled) {
+    setEnrolling(false); // Switch to "My Courses" view after enrolling
+  } else {
+    setEnrolling(true);  // Switch to "Available Courses" view after unenrolling
+  }
+
   showNotification(
     enrolled ? 'Successfully enrolled in course' : 'Successfully unenrolled from course',
     'success'
@@ -106,14 +114,22 @@ const handleCourseClick = (courseId: string, event: React.MouseEvent) => {
   }
 };
 
-const enrolledCourses = courses || [];
+const enrolledCourses = (courses || []).filter(course => course !== null);
 
 const availableCourses = (Array.isArray(allCourses) ? allCourses : [])
-  .filter(course => !enrolledCourses.some(enrolled => enrolled._id === course._id));
+  .filter(course => {
+    if (!course) return false;  // Skip if course is null
+    return !enrolledCourses.some(enrolled => 
+      enrolled && enrolled._id === course._id  // Check if enrolled exists
+    );
+  });
 
-const displayedCourses = isAdminOrFaculty 
-  ? (Array.isArray(allCourses) ? allCourses : [])
-  : (enrolling ? availableCourses : enrolledCourses);
+  const displayedCourses = isAdmin
+  ? (Array.isArray(allCourses) ? allCourses : [])  // Admin always sees all courses
+  : (enrolling 
+      ? availableCourses  // When "All Courses" clicked - show available courses
+      : enrolledCourses); // When "My Courses" clicked - show enrolled courses
+
   
   const allCoursesCount = Array.isArray(allCourses) ? allCourses.length : 0;
      const availableCoursesCount = availableCourses.length;
@@ -126,16 +142,16 @@ const displayedCourses = isAdminOrFaculty
           <div className="col-12">
             {/* Header Section */}
             <div className="d-flex justify-content-between align-items-center bg-white p-3 rounded shadow-sm mb-4">
-              <h1 className="h3 mb-0 text-dark">Dashboard</h1>
-              {isStudentOrFaulty && (
-                <button
-                  className="btn btn-outline-dark"
-                  onClick={() => setEnrolling(!enrolling)}
-                >
-                  {enrolling ? "My Courses" : "All Courses"}
-                </button>
-              )}
-            </div>
+            <h1 className="h3 mb-0 text-dark">Dashboard</h1>
+            {!isAdmin && (  // Only show toggle button for faculty and students, not admin
+              <button
+                className="btn btn-outline-dark"
+                onClick={() => setEnrolling(!enrolling)}
+              >
+                {enrolling ? "My Courses" : "All Courses"}
+              </button>
+            )}
+          </div>
 
             {notification && notification.visible && (
               <div className={`alert alert-${notification.type} alert-dismissible fade show`} role="alert">
@@ -279,6 +295,8 @@ const displayedCourses = isAdminOrFaculty
                       {isAdminOrFaculty && (
                         <div className="card-footer bg-white border-top-0 p-3">
                           <div className="d-flex gap-2 justify-content-between">
+                          {(isAdmin || hasFacultyPermission(course._id)) && (
+                              <>
                             <Link
                               to={`/Kanbas/Courses/${course._id}/Home`}
                               className="btn btn-sm flex-grow-1"
@@ -292,8 +310,6 @@ const displayedCourses = isAdminOrFaculty
                             >
                               View Course
                             </Link>
-                            {(isAdmin || hasFacultyPermission(course._id)) && (
-                              <>
                                 <button
                                   onClick={(event) => {
                                     event.preventDefault();
